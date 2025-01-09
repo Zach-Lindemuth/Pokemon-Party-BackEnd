@@ -1,0 +1,538 @@
+{
+	"info": {
+		"_postman_id": "74b1b7a2-1091-4a92-9499-fd8a89b21557",
+		"name": "Pokemon-Party",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36731393"
+	},
+	"item": [
+		{
+			"name": "Item",
+			"item": [
+				{
+					"name": "Get Items (no param)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/catalog",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"catalog"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get items <= price",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/catalog?price=0.01",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"catalog"
+							],
+							"query": [
+								{
+									"key": "price",
+									"value": "0.01"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get items by name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/catalog?search=ha",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"catalog"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "ha"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get item by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/catalog/6",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"catalog",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create item",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOIiwiZXhwIjoxNzIyNjQ5MTA3fQ.j_Yas8Xlf_wFdxRLMhninVIb8WQOFSNl-qxwexQttk26-D26lv3fUHu9NfFk6gvOyPgrinsQ1bQKzjZsBhORIA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 6,\r\n    \"name\": \"A cookie\",\r\n    \"description\": \"Chocolate Chip\",\r\n    \"price\": 99.99,\r\n    \"imageUrl\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/catalog",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"catalog"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update item",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOIiwiZXhwIjoxNzIyNjQ5MTA3fQ.j_Yas8Xlf_wFdxRLMhninVIb8WQOFSNl-qxwexQttk26-D26lv3fUHu9NfFk6gvOyPgrinsQ1bQKzjZsBhORIA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 6,\r\n    \"name\": \"A cookie\",\r\n    \"description\": \"Oatmeal Raisin\",\r\n    \"price\": 99.99,\r\n    \"imageUrl\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/catalog/9",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"catalog",
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete item",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOIiwiZXhwIjoxNzIyNjQ5MTA3fQ.j_Yas8Xlf_wFdxRLMhninVIb8WQOFSNl-qxwexQttk26-D26lv3fUHu9NfFk6gvOyPgrinsQ1bQKzjZsBhORIA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/catalog/9",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"catalog",
+								"9"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "Get Orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/order",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Close current order",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/order/checkout",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"order",
+								"checkout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get current cart",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/order/cart",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"order",
+								"cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "set item quantity in cart",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"itemId\": 1,\r\n        \"quantity\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/order/cart",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"order",
+								"cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "set item quantity to zero",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"itemId\": 1,\r\n        \"quantity\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/order/cart",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"order",
+								"cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete current cart",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/order/cart",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"order",
+								"cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete orders by date",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/order?d=2024-07-24",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"order"
+							],
+							"query": [
+								{
+									"key": "d",
+									"value": "2024-07-24"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete open orders",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/order?open=true",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"order"
+							],
+							"query": [
+								{
+									"key": "open",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOIiwiZXhwIjoxNzIyNjQ5MTA3fQ.j_Yas8Xlf_wFdxRLMhninVIb8WQOFSNl-qxwexQttk26-D26lv3fUHu9NfFk6gvOyPgrinsQ1bQKzjZsBhORIA",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Get customers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/customers",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"customers"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let jsonData = pm.response.json();\r",
+							"pm.collectionVariables.set(\"token\", jsonData.token);\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"strictSSL": false
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"user\",\r\n    \"password\": \"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/login",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"mike\",\r\n    \"password\": \"password\",\r\n    \"confirmPassword\": \"password\",\r\n    \"role\": \"ROLE_USER\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/register",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOIiwiZXhwIjoxNzIyNjQ5MTA3fQ.j_Yas8Xlf_wFdxRLMhninVIb8WQOFSNl-qxwexQttk26-D26lv3fUHu9NfFk6gvOyPgrinsQ1bQKzjZsBhORIA",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080",
+			"type": "default"
+		},
+		{
+			"key": "token",
+			"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyIiwiYXV0aCI6IlJPTEVfVVNFUiIsImV4cCI6MTY1NzY0MzI3NH0.DVYTDK3fsn80scCDYSCxdN4itbTObMVVzlpJmNZd1pC-Uh1fjLwUPN-du-OjeUTFBtDWvEuPiVjXXd1L_Dzh-A",
+			"type": "default"
+		}
+	]
+}
